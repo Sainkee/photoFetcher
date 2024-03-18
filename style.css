@@ -8,7 +8,7 @@
 /* Body styles */
 body {
   font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
+  background-color: #ccc;
 }
 
 .inputsection {
@@ -17,18 +17,26 @@ body {
 
 input {
   padding: 7px;
-  width: 400px;
+  width: 60%;
+
   border: 1px solid #ccc;
-  border-radius: 4px;
+
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-right: none;
+}
+input:focus {
+  outline: none;
 }
 
 button.btn {
-  padding: 8px 14px;
+  padding: 7px 14px;
   background-color: green;
   color: white;
   cursor: pointer;
   border: none;
-  border-radius: 4px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
   margin-left: -5px;
 }
 
@@ -39,6 +47,8 @@ button.btn {
 .title {
   text-align: center;
   margin: 50px 0;
+  font-weight: 800;
+  font-size: x-large;
 }
 
 .more {
@@ -87,12 +97,11 @@ button.btn {
   /* Rounded corners for images */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slight shadow for images */
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Smooth transition on hover */
-  height: 200px;
+  height: 270px;
   width: 270px;
 }
 a {
   text-decoration: none;
-  padding: 10px;
 }
 .card p {
   margin: 10px;
@@ -119,7 +128,7 @@ a {
   top: 0;
   left: 0;
   width: 100%;
-  height: 200px;
+  height: 270px;
   background-color: rgba(219, 25, 25, 0.226); /* Semi-transparent overlay */
   display: none; /* Hidden by default */
   justify-content: center;

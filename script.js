@@ -4,9 +4,10 @@ let btn = document.querySelector("button");
 let contain = document.querySelector(".cardContainer");
 let more = document.querySelector(".showMore");
 let page = 1;
+let query = "";
 
-function getData(page) {
-  const url = `https://api.unsplash.com/search/photos?page=${page}&query=${input.value}&client_id=${key}`;
+function getData(page, inputval) {
+  const url = `https://api.unsplash.com/search/photos?page=${page}&query=${inputval}&client_id=${key}`;
 
   fetch(url)
     .then((response) => {
@@ -25,17 +26,16 @@ function getData(page) {
 
 btn.addEventListener("click", () => {
   page = 1;
-  getData(page);
+  query = input.value;
+  getData(page, query);
 });
 
 more.addEventListener("click", () => {
   page++;
-  getData(page);
+  getData(page, query);
 });
 
 function displayImages(data) {
-  //   contain.innerHTML = "";
-
   data.results.forEach((photo) => {
     console.log(photo);
     let card = document.createElement("div");
@@ -53,6 +53,6 @@ function displayImages(data) {
     `;
     contain.appendChild(card);
   });
-
+  input.value = "";
   more.style.display = "block";
 }
