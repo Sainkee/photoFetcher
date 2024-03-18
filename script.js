@@ -25,6 +25,7 @@ function getData(page, inputval) {
 }
 
 btn.addEventListener("click", () => {
+  contain.innerHTML = "";
   page = 1;
   query = input.value;
   getData(page, query);
@@ -56,3 +57,12 @@ function displayImages(data) {
   input.value = "";
   more.style.display = "block";
 }
+
+input.addEventListener("keydown", (e) => {
+  query = input.value;
+
+  if (e.key === "Enter") {
+    contain.innerHTML = "";
+    getData(page, query);
+  }
+});
